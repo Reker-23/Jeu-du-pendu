@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Pendu.c"
 
 int main()
 {
-    printf("Hello world!\n");
+    runPendu();
     return 0;
 }

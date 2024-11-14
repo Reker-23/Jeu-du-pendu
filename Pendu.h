@@ -9,7 +9,7 @@
 #define MAX_MOT 100
 #define MAX_VIES 6
 #define FICHIER_MOTS "listeDeMotsFrancais.txt"
-
+int vies;
 
 int chargerMotAleatoire(char *mot, int longueurMax);
 
