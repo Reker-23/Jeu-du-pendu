@@ -31,3 +31,39 @@ void supprimerAccents(char *mot) {
     }
 }
 
+int chargerMotAleatoire(char *mot, int longueur_max) {
+    FILE *fichier = fopen(FICHIER_MOTS, "r");
+    if (fichier == NULL) {
+        printf("Erreur : impossible de charger le fichier de mots.\n");
+        return 0;
+    }
+
+    // Compter le nombre de mots dans le fichier
+    int nombre_de_mots = 0;
+    char buffer[MAX_MOT];
+    while (fgets(buffer, MAX_MOT, fichier) != NULL) {
+        nombre_de_mots++;
+    }
+
+    if (nombre_de_mots == 0) {
+        fclose(fichier);
+        printf("Erreur : le fichier de mots est vide.\n");
+        return 0;
+    }
+
+    // Choisir un mot aléatoire
+    srand(time(NULL));
+    int index_aleatoire = rand() % nombre_de_mots;
+
+    // Aller au mot choisi
+    rewind(fichier);
+    for (int i = 0; i <= index_aleatoire; i++) {
+        fgets(mot, longueur_max, fichier);
+    }
+
+    // Retirer le saut de ligne et le remplacer par la fin de chaîne
+    mot[strcspn(mot, "\n")] = '\0';
+
+    fclose(fichier);
+    return 1;
+}
