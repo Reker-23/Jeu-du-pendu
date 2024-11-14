@@ -20,7 +20,7 @@ void initialiserPartie(char *mot_secret);
 void afficherEtatJeu(const char *mot_secret, const char *mot_affiche, int vies);
 
 
-int jouerTour(const char *mot_secret, char *mot_affiche);
+int jouerTour(const char *mot_secret, char *mot_affiche, int vies);
 
 
 int menuRejouer();
