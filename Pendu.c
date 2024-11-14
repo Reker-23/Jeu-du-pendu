@@ -67,3 +67,12 @@ int chargerMotAleatoire(char *mot, int longueur_max) {
     fclose(fichier);
     return 1;
 }
+
+
+void initialiserPartie(char *mot_secret) {
+    if (!chargerMotAleatoire(mot_secret, MAX_MOT)) {
+        printf("Erreur lors du chargement du mot secret.\n");
+        exit(1);
+    }
+    supprimerAccents(mot_secret); // Suppression des accents dans le mot secret
+}
