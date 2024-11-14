@@ -52,3 +52,18 @@ int jouerTour(const char *mot_secret, char *mot_affiche, int vies){
     }
 }
 
+int menuRejouer(){
+    char rep[10];
+    int rej = 0;
+    int vies = 0;
+    printf("Voulez vous rejouer ? (oui ou non) ");
+    fgets(rep, sizeof(rep), stdin);
+    if(rep == 'oui'){
+        rej = 1;
+        printf("Entrez le nombre de vie souhaité(6 max): ");
+        scanf("%i", &vies);
+    }
+    else{
+        rej = 0;
+    }
+}
