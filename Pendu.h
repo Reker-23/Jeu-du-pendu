@@ -11,16 +11,17 @@
 #define FICHIER_MOTS "listeDeMotsFrancais.txt"
 
 
-int chargerMotAleatoire(char *mot, int longueur_max);
+int chargerMotAleatoire(char *mot, int longueurMax);
 
+void supprimerAccents(char *mot);
 
-void initialiserPartie(char *mot_secret);
+void initialiserPartie();
 
 
 void afficherEtatJeu(const char *mot_secret, const char *mot_affiche, int vies);
 
 
-int jouerTour(const char *mot_secret, char *mot_affiche);
+int jouerTour(const char *mot_secret, char *mot_affiche, int *vies);
 
 
 int menuRejouer();
