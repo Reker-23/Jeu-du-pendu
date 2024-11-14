@@ -1,30 +1,30 @@
 #include "Pendu.h"
 #include <time.h>
 
-// Fonction pour remplacer les lettres accentuées par des lettres sans accent
+// Fonction pour remplacer les lettres accentuï¿½es par des lettres sans accent
 void supprimerAccents(char *mot) {
     for (int i = 0; mot[i] != '\0'; i++) {
         switch (mot[i]) {
-            case 'à':
-            case 'â':
-            case 'ä':   mot[i] = 'a';
+            case 'Ã ':
+            case 'Ã¢':
+            case 'Ã¤':   mot[i] = 'a';
                         break;
-            case 'é':
-            case 'è':
-            case 'ê':
-            case 'ë':   mot[i] = 'e';
+            case 'Ã©':
+            case 'Ã¨':
+            case 'Ãª':
+            case 'Ã«':   mot[i] = 'e';
                         break;
-            case 'î':
-            case 'ï':   mot[i] = 'i';
+            case 'Ã®':
+            case 'Ã¯':   mot[i] = 'i';
                         break;
-            case 'ô':
-            case 'ö':   mot[i] = 'o';
+            case 'Ã´':
+            case 'Ã¶':   mot[i] = 'o';
                         break;
-            case 'ù':
-            case 'û':
-            case 'ü':   mot[i] = 'u';
+            case 'Ã¹':
+            case 'Ã»':
+            case 'Ã¼':   mot[i] = 'u';
                         break;
-            case 'ç':   mot[i] = 'c';
+            case 'Ã§':   mot[i] = 'c';
                         break;
 
         }
@@ -51,7 +51,7 @@ int chargerMotAleatoire(char *mot, int longueur_max) {
         return 0;
     }
 
-    // Choisir un mot aléatoire
+    // Choisir un mot alÃ©atoire
     srand(time(NULL));
     int index_aleatoire = rand() % nombre_de_mots;
 
@@ -61,7 +61,7 @@ int chargerMotAleatoire(char *mot, int longueur_max) {
         fgets(mot, longueur_max, fichier);
     }
 
-    // Retirer le saut de ligne et le remplacer par la fin de chaîne
+    // Retirer le saut de ligne et le remplacer par la fin de chaine
     mot[strcspn(mot, "\n")] = '\0';
 
     fclose(fichier);
